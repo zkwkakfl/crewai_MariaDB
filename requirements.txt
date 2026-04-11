@@ -1,0 +1,4 @@
+# Ollama: CrewAI 기본 패키지로 충분 (ollama/모델명)
+# Gemini: `pip install "crewai[google-genai]>=1.14.0"`
+crewai>=1.14.0
+python-dotenv>=1.0.0

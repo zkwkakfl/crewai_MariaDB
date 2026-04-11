@@ -1,0 +1,147 @@
+-- 스테이징: SQLite field_change_log 미러 (작업지시번호당 1행)
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS field_change_log;
+CREATE TABLE field_change_log (
+  `작업지시번호` VARCHAR(128) NOT NULL COMMENT '작업지시번호(PK)',
+  `사업명변경` TEXT NULL COMMENT '제거·정규화된 사업명 변경 구간',
+  `품명변경` TEXT NULL COMMENT '제거·정규화된 품명 변경 구간',
+  `품번변경` TEXT NULL COMMENT '제거·정규화된 품번 변경 구간',
+  `updated_at` VARCHAR(64) NOT NULL COMMENT '갱신 시각(ISO8601 UTC 등)',
+  PRIMARY KEY (`작업지시번호`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+COMMENT='필드 변경 이력(넓은 스키마)';
+
+-- 원본 행 수: 129, 아래 INSERT 수: 129
+
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2507-0454', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2507-0455', '무인기일반사업--> 무인항공기 일반사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2507-0456', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2507-0457', '무인기일반사업--> 무인항공기 일반사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2509-0392', 'M사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2509-0393', 'F2--> F2 데이터링크시스템', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2509-0474', ')', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2509-0475', ')', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0010', '함대함2 SSPA--> 함대공2 SSPA', NULL, 'A02015U1002A--> 847-U14606-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0011', '함대함2 SSPA--> 함대공2 SSPA', NULL, 'A02015U1005A--> 847-U14610-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0015', 'A5 무인기-->A5 RALT', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0035', NULL, NULL, 'KER-AEW23-105--> 604-95935', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0219', NULL, NULL, 'LBIN3300--> 80881057', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0299', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0300', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0354', NULL, '회로카드조립체,연동제어기--> 연동제어용,회로카드조립체', '828-P07522--> 828-U07521-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0496', 'A5 GPS 항재밍장치--> CUAV2_GPS항재밍_주장비', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2510-0497', 'A5 SAR-->CUAV2', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0018', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0019', '무인기일반사업--> 무인항공기 일반사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0020', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0021', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0022', '무인기일반사업--> 무인항공기 일반사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0023', '무인기양산사업--> 무인항공기 양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0040', NULL, NULL, '981-P29660-00--> 981-U29661-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0074', 'A5-->CUAV2', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0294', '발주오류(고객사) 천궁 사우디 수출 -->천궁2', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0295', '발주오류(고객사) 천궁 사우디 수출 -->천궁2', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0296', '발주오류(고객사) 천궁 사우디 수출 -->천궁2', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0382', NULL, '케이블조립체 특수목적용,전기용(W02) -->케이블조립체 특수목적용,전기용(WC2)', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0454', 'L-SAM ABM 유도조종부시제 --> L-SAM2 미익구동장치', NULL, 'LBAC0521 -->L2AC0521', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0455', 'L-SAM ABM 유도조종부시제 --> L-SAM2 미익구동장치', NULL, 'LBAC0531 -->L2AC0531', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0456', 'L-SAM ABM 유도조종부시제 --> L-SAM2 미익구동장치', NULL, 'LBAC0541 -->L2AC0541', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0457', 'L-SAM ABM 유도조종부시제 --> L-SAM2 미익구동장치', NULL, 'LBAC0551 -->L2AC0551', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0458', 'L-SAM ABM 유도조종부시제 --> L-SAM2 미익구동장치', NULL, 'LBAC0561 -->L2AC0561', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0494', NULL, '신호변환보드--> 회로카드 조립체(신호변환보드용)', 'DW23-A002--> 909-A11849-001', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0621', NULL, NULL, '847-U20039--> 847-U20039-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0648', NULL, '인쇄회로판-->인쇄회로판(전원반용)', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0649', NULL, '인쇄회로판-->인쇄회로판(전원반용)', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0661', 'L-SAM -Ⅱ-->LSAM2', '회로카드조립체,전원반 -->전원반', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2511-0677', NULL, NULL, '980-A41260-00 --980-U41260-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2512-0124', 'A5 REAT-->CUAV2 RALT', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2512-0236', NULL, NULL, 'A84407107-001 -->A84407107-011변경', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2512-0263', 'MUAV용-->항재밍사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2512-0264', 'MUAV용-->항재밍사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2512-0419', NULL, '회로카드조립체(HV FIILTER) -->회로카드조립체(HV FILTER)', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2512-0611', NULL, '영상처리용,유도전자장치용,IPB -->(내수)인쇄회로판,영상처리용,유도전자장치용', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2512-0647', '정밀위치추적장비--> 정밀위치추적장비 탑재부', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0058', 'TMMR-전원제어장치용 -->TMMR 차량개조장착사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0059', 'TMMR-전원제어장치용 -->TMMR 차량개조장착사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0060', 'TMMR-전원제어장치용 -->TMMR 차량개조장착사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0061', 'TMMR-전원제어장치용 -->TMMR 차량개조장착사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0062', 'TMMR-전원제어장치용 -->TMMR 차량개조장착사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0063', 'TMMR-전원제어장치용 -->TMMR 차량개조장착사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0064', 'TMMR-전원제어장치용 -->TMMR 차량개조장착사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0137', '장사정포체계(LAMD) --> 장사정포요격체계(LAMD)', '인쇄회로판(교류전원용)1-> 회로카드조립체(교류전원용)1,목철신과장', '835-U63705->80864467,목철신과장', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0138', '장사정포체계(LAMD) --> 장사정포요격체계(LAMD)', '인쇄회로판(교류전원용)1-> 회로카드조립체(교류전원용)1,목철신과장', '835-U63705->80864467,목철신과장', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0139', '장사정포체계(LAMD) --> 장사정포요격체계(LAMD)', '인쇄회로판(교류전원용)2-> 회로카드조립체(교류전원용)2,목철신과장', '835-U63709->80864469,목철신과장', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0140', '장사정포체계(LAMD) --> 장사정포요격체계(LAMD)', '인쇄회로판(교류전원용)2-> 회로카드조립체(교류전원용)2,목철신과장', '835-U63709->80864469,목철신과장', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0141', '장사정포체계(LAMD) --> 장사정포요격체계(LAMD)', '인쇄회로판(직류전원용)-> 회로카드조립체(직류전원용),목철신과장', '835-U63755->80864476,목철신과장', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0142', '장사정포체계(LAMD) --> 장사정포요격체계(LAMD)', '인쇄회로판(직류전원용)-> 회로카드조립체(직류전원용),목철신과장', '835-U63755->80864476,목철신과장', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0224', NULL, '회로카드조립체,EW 신호처리반 --회로카드조립체,EW 신호처리판', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0225', NULL, '회로카드조립체,EW 신호처리반 --회로카드조립체,EW 신호처리판', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2601-0266', NULL, NULL, '80682643-EX971 --> 80682641-EX971,발주오류', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2602-0147', NULL, '회로카드조립체,전원공급모듈 -->회로카드조립체,전원공급기용', 'A02104A1000A -->A02104U1001A', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2602-0183', NULL, NULL, 'BSH-PB-ME-01 -->717-U24213 고객사변경요청', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2602-0184', NULL, NULL, 'BSH-PB-ME-02 -->717-U24214 고객사변경요청', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2602-0233', NULL, NULL, '846-U15467-00EX966 -->837-U15467-00EX971 고객사변경,260225', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0038', '고객사변경 LRS-M-->적아식별질문기전원공급조립체', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0039', '고객사변경 LRS-M-->송풍팬전원공급조립체', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0127', NULL, NULL, '607-E45655-->607-U45655-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0128', NULL, NULL, '607-E45658-->607-U45658-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0129', NULL, NULL, '607-A58855-->607-U58855-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0137', NULL, NULL, '980-U41260-00-->980-U41261-00 변경 배동범연구원', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0152', NULL, '회로카드조립체,모체판(RF) -->밀리미터대역신호수신기모체판(RF) 고객사 요청', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0153', NULL, '회로카드조립체,모체판(디지털) -->밀리미터대역신호수신기모체판(디지털) 고객사 요청', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0198', NULL, NULL, 'A20052557 --> KER-MRS22-00', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0226', 'F2 F3 어댑터군-->OP양산사업 곽나현사원,260320', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0257', NULL, NULL, '896-U17630-00-EX966 --> 896-U17630-EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0315', NULL, '회로카드조립체,모체판(RF) -->밀리미터대역신호수신기모체판(RF) 고객사 요청', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0316', NULL, '회로카드조립체,모체판(디지털) -->밀리미터대역신호수신기모체판(디지털) 고객사 요청', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0385', '정밀위치추적장비--> 정밀위치추적장비 탑재부', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2603-0421', NULL, NULL, '670-U81777-00-->607-U81777-00 김정인연구원,260402', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('A-2604-0030', NULL, 'TCM-->TCM 보드', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2509-0446', NULL, NULL, '80893588--> 80893589', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2509-0447', NULL, NULL, '80893597--> 80893598', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0038', '펜웨스트향 낙뢰필터--> 무인항공기 일반/양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0039', '펜웨스트향 낙뢰필터--> 무인항공기 일반/양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0040', '펜웨스트향 낙뢰필터--> 무인항공기 일반/양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0041', '펜웨스트향 낙뢰필터--> 무인항공기 일반/양산사업', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0337', NULL, NULL, '837-U51936EX971--> 837-U51936-00EX971', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0338', NULL, NULL, '837-U51938EX971--> 837-U51938-00EX971', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0339', NULL, NULL, '837-U51845EX971--> 837-U51845-00EX971', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0340', NULL, NULL, '837-U51847EX971--> 837-U51847-00EX971', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0341', NULL, NULL, '837-U51849EX971--> 837-U51849-00EX971', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0342', NULL, NULL, '837-U51851EX971--> 837-U51851-00EX971', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2510-0498', 'A5 SAR-->CUAV2', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2511-0557', 'L-SAM--> 함대공유도탄-II 날개작동기 전동기조립체(퍼스텍)', '인쇄회로기판조립체 -->회로기판조립체', NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0003', 'X -->LAMD2/ 김도현사원', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0054', NULL, '회로카드 조립체,스위치용 -->회로카드 조립체(스위치용)', '837-U51938-00EX971 -->846-U51938-00EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0055', NULL, '회로카드 조립체,게이트전원용 -->회로카드 조립체(게이트 전원용)', '837-U51851-00EX971 -->846-U51851-00EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0056', NULL, '회로카드 조립체,전원용 -->회로카드 조립체(전원용)', '837-U51849-00EX971 -->846-U51849-00EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0057', NULL, '회로카드 조립체,게이트용 -->회로카드 조립체(게이트용)', '837-U51847-00EX971 -->846-U51847-00EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0058', NULL, '회로카드 조립체,제어용 -->회로카드 조립체(제어용)', '837-U51845-00EX971 -->846-U51845-00EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0059', NULL, '회로카드 조립체,제어용 -->회로카드 조립체(제어용)', '837-U51936-00EX971 -->846-U51936-00EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0060', NULL, '회로카드 조립체,표시기조립체 -->표시기 조립체', '837-U51943EX971 -->846-U51943-00EX966', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0098', 'M823 ACCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17209EX971 -->837-U17209-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0099', 'M823 ACCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17211EX971 -->837-U17211-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0100', 'M823 ACCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17203EX971 -->837-U17203-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0101', 'M823 ACCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17215EX971 -->837-U17215-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0102', 'M823 IPUCP-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17815EX971 -->837-U17815-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0103', 'M823 IPUCP-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17817EX971 -->837-U17817-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0104', 'M823 CBCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17609EX971 -->837-U17609-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0105', 'M823 CBCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17611EX971 -->837-U17611-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0106', 'M823 CBCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17613EX971 -->837-U17613-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2601-0110', 'M823 ACCU-->M823 통제소 발주서기준변경,고객사', NULL, '837-U17213EX971 -->837-U17213-00EX971 고객사변경요청,260202', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2602-0081', 'MSAM2-->SA-MSAM변경 이수동과장,260219', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2602-0082', 'MSAM2-->SA-MSAM변경 이수동과장,260219', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2602-0083', 'MSAM2-->SA-MSAM변경 이수동과장,260219', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2602-0084', 'MSAM2-->SA-MSAM변경 이수동과장,260219', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2602-0085', 'MSAM2-->SA-MSAM변경 이수동과장,260219', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2602-0086', 'MSAM2-->SA-MSAM변경 이수동과장,260219', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2602-0087', 'MSAM2-->SA-MSAM변경 이수동과장,260219', NULL, NULL, '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2603-0063', NULL, NULL, 'PLAA30001896 -->A30001896', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2603-0165', 'L-SAM2-->LSAM2 체계개발(고고도) 항재밍위성항법장치', NULL, 'P268-640105-->L2IN3105', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2603-0166', 'L-SAM2-->LSAM2 체계개발(고고도) 항재밍위성항법장치', NULL, 'P268-640107-->L2IN3107', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2603-0167', 'L-SAM2-->LSAM2 체계개발(고고도) 항재밍위성항법장치', NULL, 'P268-640109-->L2IN3109', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('AB-2603-0168', 'L-SAM2-->LSAM2 체계개발(고고도) 항재밍위성항법장치', NULL, 'P268-640111-->L2IN3111', '2026-04-11T08:04:52Z');
+INSERT INTO field_change_log (`작업지시번호`, `사업명변경`, `품명변경`, `품번변경`, `updated_at`) VALUES ('B-2510-0330', NULL, '회로카드조립체-->회로카드조립체,제어보드', ';TESTSET-->80289770-EX966', '2026-04-11T08:04:52Z');
+
+SET FOREIGN_KEY_CHECKS=1;

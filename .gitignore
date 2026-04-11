@@ -1,0 +1,15 @@
+.venv/
+venv/
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Crew가 생성한 DB 설계 산출물(버전 관리하려면 아래 줄 제거)
+smd_db_design_*.md
+공정발주내역.sqlite.bak*
