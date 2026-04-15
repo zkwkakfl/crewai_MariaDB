@@ -24,14 +24,41 @@ from dotenv import find_dotenv, load_dotenv
 from smd_crew.crew_factory import create_smd_db_design_crew
 
 
-def _load_env() -> None:
-    """프로젝트 루트 .env를 우선 로드하고, 상위 경로 탐색으로 보조한다."""
-    env_path = _ROOT / ".env"
-    if env_path.is_file():
-        load_dotenv(env_path, override=True)
+def _load_env(*, profile: str | None) -> None:
+    """
+    환경 변수 로딩 규칙(낮은 쪽 → 높은 쪽 우선권).
+
+    [핵심 로직 요약]
+    - 공통: `.env` (로컬 전용, gitignore)
+    - 프로파일: `.env.home` / `.env.office` (로컬 전용, gitignore)
+    - 최종 오버라이드: `.env.local` (로컬 전용, gitignore)
+
+    [변경 사항의 이유]
+    - 같은 레포를 회사/집에서 쓰더라도, PC 사양에 맞는 모델/옵션을 충돌 없이 분리하기 위함.
+
+    [잠재적 리스크]
+    - `.env.*` 파일을 실수로 커밋하면 민감 정보가 유출될 수 있으므로 `.gitignore`가 필수.
+    """
+    # 1) 프로젝트 루트 기준 로컬 전용 공통값
+    base = _ROOT / ".env"
+    if base.is_file():
+        load_dotenv(base, override=True)
+
+    # 2) 프로파일
+    if profile:
+        prof = _ROOT / f".env.{profile}"
+        if prof.is_file():
+            load_dotenv(prof, override=True)
+
+    # 3) 최종 오버라이드
+    local = _ROOT / ".env.local"
+    if local.is_file():
+        load_dotenv(local, override=True)
+
+    # 4) 마지막 보조(상위 경로 탐색) — 이미 로드가 됐더라도 누락 대비
     discovered = find_dotenv(usecwd=True)
     if discovered:
-        load_dotenv(discovered, override=True)
+        load_dotenv(discovered, override=False)
 
 
 def _use_ollama() -> bool:
@@ -83,20 +110,17 @@ def _configure_stdio_utf8_on_windows() -> None:
 
 def main() -> None:
     _configure_stdio_utf8_on_windows()
-    _load_env()
-    if not _has_llm_credentials():
-        print(
-            "클라우드 LLM을 쓰려면 API 키가 필요합니다. "
-            f"프로젝트 루트({_ROOT})의 `.env`에 아래 중 하나를 넣거나, "
-            "로컬 Ollama를 쓰려면 SMD_USE_OLLAMA=true(기본)로 두세요.\n"
-            "  - Gemini: GOOGLE_API_KEY=... 또는 GEMINI_API_KEY=...\n"
-            "  - OpenAI: OPENAI_API_KEY=...",
-            file=sys.stderr,
-        )
-        raise SystemExit(1)
-
     parser = argparse.ArgumentParser(
         description="SMD 작업지시 중심 DB 설계 CrewAI 실행",
+    )
+    parser.add_argument(
+        "--profile",
+        choices=("home", "office"),
+        default=None,
+        help=(
+            "머신 프로파일에 맞는 로컬 설정(.env.home / .env.office)을 로드한다. "
+            "예) 집 랩탑: --profile home"
+        ),
     )
     parser.add_argument(
         "brief",
@@ -142,6 +166,18 @@ def main() -> None:
         ),
     )
     args = parser.parse_args()
+
+    _load_env(profile=args.profile)
+    if not _has_llm_credentials():
+        print(
+            "클라우드 LLM을 쓰려면 API 키가 필요합니다. "
+            f"프로젝트 루트({_ROOT})의 `.env` 또는 `.env.<profile>`에 아래 중 하나를 넣거나, "
+            "로컬 Ollama를 쓰려면 SMD_USE_OLLAMA=true(기본)로 두세요.\n"
+            "  - Gemini: GOOGLE_API_KEY=... 또는 GEMINI_API_KEY=...\n"
+            "  - OpenAI: OPENAI_API_KEY=...",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
 
     if args.brief is None:
         if args.quick:
