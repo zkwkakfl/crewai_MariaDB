@@ -1,4 +1,4 @@
-"""기존 field_change_log(세로 형식) → 작업지시번호당 1행(넓은 형식) 이관."""
+"""레거시 field_change_log → 세로 스키마(필드당 1행) 이관."""
 
 from __future__ import annotations
 
@@ -13,20 +13,20 @@ if str(_SCRIPTS) not in sys.path:
 ROOT = _SCRIPTS.parent
 DB = ROOT / "공정발주내역.sqlite"
 
-from field_change_log_wide import ensure_wide_table, migrate_from_narrow_table
+from field_change_log import migrate_legacy_schema
 
 
 def main() -> None:
+    if not DB.is_file():
+        raise SystemExit(f"DB 없음: {DB}")
     conn = sqlite3.connect(DB)
-    n = migrate_from_narrow_table(conn)
-    if n == 0:
-        cur = conn.cursor()
-        ensure_wide_table(cur)
-        conn.commit()
-        print("이관할 세로 형식 로그 없음 — 넓은 테이블만 확인")
-    else:
-        print(f"이관 완료: {n}개 작업지시번호")
+    try:
+        summary = migrate_legacy_schema(conn)
+    except RuntimeError as e:
+        conn.close()
+        raise SystemExit(str(e)) from e
     conn.close()
+    print(summary)
 
 
 if __name__ == "__main__":

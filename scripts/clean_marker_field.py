@@ -1,5 +1,5 @@
 """
-consolidated_data 한 필드에서 '마커' 이후(마커 포함) 제거 + field_change_log 넓은 테이블에 제거 구간 기록.
+consolidated_data 한 필드에서 '마커' 이후(마커 포함) 제거 + field_change_log(세로형)에 제거 구간 기록.
 
 사용 예:
   python scripts/clean_marker_field.py --column 품명 --marker 품명변경 --log-column 품명변경
@@ -22,6 +22,7 @@ if str(_SCRIPTS) not in sys.path:
 ROOT = _SCRIPTS.parent
 DB = ROOT / "공정발주내역.sqlite"
 
+from field_change_log import LOG_COLUMN_TO_FIELD_NAME
 from field_change_log_wide import ensure_wide_table, migrate_from_narrow_table, upsert_column
 
 
@@ -51,8 +52,8 @@ def main() -> None:
     p.add_argument(
         "--log-column",
         required=True,
-        choices=("사업명변경", "품명변경", "품번변경"),
-        help="field_change_log 에 넣을 컬럼명",
+        choices=sorted(LOG_COLUMN_TO_FIELD_NAME.keys()),
+        help="field_change_log 에 매핑할 마커 종류(→필드명)",
     )
     args = p.parse_args()
 
